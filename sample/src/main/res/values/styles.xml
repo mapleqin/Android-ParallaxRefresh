@@ -1,0 +1,10 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!--状态栏颜色-->
+        <item name="colorPrimaryDark">@color/sample_primary</item>
+        <!--Toolbar颜色-->
+        <item name="colorPrimary">@color/sample_primary</item>
+    </style>
+
+</resources>

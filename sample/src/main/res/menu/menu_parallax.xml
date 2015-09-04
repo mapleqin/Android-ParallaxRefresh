@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="net.soulwolf.widget.parallaxrefresh.sample.ParallaxScrollViewActivity">
+
+    <item android:id="@+id/action_refresh"
+        android:title="@string/action_settings"
+        android:icon="@android:drawable/ic_popup_sync"
+        android:orderInCategory="100"
+        app:showAsAction="always" />
+</menu>
