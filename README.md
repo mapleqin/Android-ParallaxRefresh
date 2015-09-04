@@ -1,7 +1,9 @@
 # Android-ParallaxRefresh
 This is a drop-down head View supports parallax effect, support refresh libraries！ If you have any questions in the course or suggestions, please send an e-mail to the following e-mail, thank you!
 
-For more information please see <a href='http://devsoulwolf.github.io/Android-ParallaxRefresh'>the website</a>
+For more information please see <a href="http://devsoulwolf.github.io/Android-ParallaxRefresh">the website</a>
+
+<a href="http://cblog.cc/2015/09/03/Android-Parallax-%E4%BB%BFQQ%E7%A9%BA%E9%97%B4%E9%A6%96%E9%A1%B5%E4%B8%8B%E6%8B%89%E5%88%B7%E6%96%B0%E6%95%88%E6%9E%9C/">中文介绍</a>
 
 ## Screenshots
 
