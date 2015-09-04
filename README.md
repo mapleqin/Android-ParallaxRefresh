@@ -9,7 +9,7 @@ For more information please see <a href='http://devsoulwolf.github.io/Android-Pa
 ![Sample](https://img.alicdn.com/imgextra/i4/1025192026/TB2yYAweVXXXXaIXpXXXXXXXXXX_!!1025192026.gif)
 
 
-## Android-RatioLayout with xml code
+## Android-ParallaxRefresh with xml code
 ```xml
 	// ListView
 	<net.soulwolf.widget.parallaxrefresh.ParallaxScrollLayout
@@ -60,7 +60,7 @@ For more information please see <a href='http://devsoulwolf.github.io/Android-Pa
 
     </net.soulwolf.widget.parallaxrefresh.ParallaxScrollLayout>	
 ```
-## Android-RatioLayout with java code
+## Android-ParallaxRefresh with java code
 ```java
 	// ParallaxHolder
 	public class SimpleParallaxHolder extends BaseParallaxHolder {
