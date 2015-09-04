@@ -18,6 +18,7 @@
  */
 package net.soulwolf.widget.parallaxrefresh.sample;
 
+import android.content.Context;
 import android.support.annotation.DrawableRes;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -59,5 +60,45 @@ public class SimpleParallaxHolder extends BaseParallaxHolder {
         super.onViewCreated(view);
         ImageView imageView = (ImageView) findViewById(R.id.image);
         imageView.setImageResource(drawableRes);
+    }
+
+    @Override
+    public void onCreate(Context context) {
+        super.onCreate(context);
+    }
+
+    @Override
+    public void onMeasured(int width, int height) {
+        super.onMeasured(width, height);
+    }
+
+    @Override
+    public int getRealWidth() {
+        return super.getRealWidth();
+    }
+
+    @Override
+    public int getRealHeight() {
+        return super.getRealHeight();
+    }
+
+    @Override
+    public void onScrollChanged(int scrollX, int scrollY, boolean isTouchEvent) {
+        super.onScrollChanged(scrollX, scrollY, isTouchEvent);
+    }
+
+    @Override
+    public void onRollback() {
+        super.onRollback();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+    }
+
+    @Override
+    public View getContentView() {
+        return super.getContentView();
     }
 }
