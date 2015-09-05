@@ -57,8 +57,8 @@ public class ParallaxScrollLayout extends FrameLayout implements ParallaxScrollC
     private OnRefreshListener mOnRefreshListener;
     private float mRefreshRatio = .6f;
 
-    private float mTouchStartY;
-    private float mCurrentY;
+    private float mInitializeMotion;
+    private float mDownMotion;
     private int mTouchSlop;
 
     public ParallaxScrollLayout(Context context) {
@@ -195,12 +195,10 @@ public class ParallaxScrollLayout extends FrameLayout implements ParallaxScrollC
     public boolean onInterceptTouchEvent(MotionEvent e) {
         switch (e.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                mTouchStartY = e.getY();
-                mCurrentY = mTouchStartY;
+                mInitializeMotion = mDownMotion = e.getY();
                 break;
             case MotionEvent.ACTION_MOVE:
-                float currentY = e.getY();
-                float dy = currentY - mTouchStartY;
+                float dy = e.getY() - mInitializeMotion;
                 if (dy > mTouchSlop && !Utils.canChildScrollUp(mParallaxTarget)) {
                     return true;
                 }
@@ -210,24 +208,23 @@ public class ParallaxScrollLayout extends FrameLayout implements ParallaxScrollC
     }
 
     @Override
-    public boolean onTouchEvent(@NonNull MotionEvent e) {
-        switch (e.getAction()) {
+    public boolean onTouchEvent(@NonNull MotionEvent ev) {
+        switch (ev.getAction()) {
             case MotionEvent.ACTION_MOVE:
-                mCurrentY = e.getY();
-                float dy = Utils.constrains(mCurrentY - mTouchStartY, 0, getMaxScrollY() * 2);
+                mDownMotion = ev.getY();
+                float dy = Utils.minMax(mDownMotion - mInitializeMotion, 0, getMaxScrollY() * 2);
                 if(mParallaxTarget != null){
-                    float translationY = DECELERATE_INTERPOLATOR.getInterpolation(dy / getMaxScrollY() / 2) * dy / 2;
-                    ViewCompat.setTranslationY(mParallaxTarget,translationY);
-                    onParallaxScrollChanged(0, (int) -translationY,true);
+                    final float scrollY = DECELERATE_INTERPOLATOR.getInterpolation(dy / getMaxScrollY() / 2) * dy / 2;
+                    ViewCompat.setTranslationY(mParallaxTarget,scrollY);
+                    onParallaxScrollChanged(0, (int) -scrollY,true);
                 }
                 return true;
             case MotionEvent.ACTION_CANCEL:
             case MotionEvent.ACTION_UP:
                 rollback();
                 return true;
-            default:
-                return super.onTouchEvent(e);
         }
+        return super.onTouchEvent(ev);
     }
 
     /** When raised his finger roll back to in situ */
@@ -327,10 +324,9 @@ public class ParallaxScrollLayout extends FrameLayout implements ParallaxScrollC
 
         @Override
         protected void applyTransformation(float interpolatedTime, Transformation t) {
-            float translationY = mTargetValue - (mTargetValue - mCurrentValue)
-                    * (1.0f - interpolatedTime);
-            ViewCompat.setTranslationY(mTargetView,translationY);
-            onParallaxScrollChanged(0, (int) -translationY,false);
+            float scrollY = mTargetValue - (mTargetValue - mCurrentValue) * (1.0f - interpolatedTime);
+            ViewCompat.setTranslationY(mTargetView,scrollY);
+            onParallaxScrollChanged(0, (int) -scrollY,false);
         }
 
         @Override
@@ -358,5 +354,14 @@ public class ParallaxScrollLayout extends FrameLayout implements ParallaxScrollC
             throw new IllegalArgumentException("The refresh ratio only between 0.0 f to 1.0 f value");
         }
         this.mRefreshRatio = refreshRatio;
+    }
+
+    public void setParallaxMode(@NonNull ParallaxMode mode){
+        if(mParallaxMode != mode){
+            mParallaxMode = mode;
+            if(tryParallaxHolder()){
+                mParallaxHolder.setParallaxMode(mParallaxMode);
+            }
+        }
     }
 }

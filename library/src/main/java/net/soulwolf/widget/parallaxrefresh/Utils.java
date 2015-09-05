@@ -47,11 +47,11 @@ class Utils {
         }
     }
 
-    static int constrains(int value,int min,int max){
+    static int minMax(int value, int min, int max){
         return Math.max(min,Math.min(value,max));
     }
 
-    static float constrains(float value,float min,float max){
+    static float minMax(float value, float min, float max){
         return Math.max(min,Math.min(value,max));
     }
 }

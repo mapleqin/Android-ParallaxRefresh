@@ -74,7 +74,7 @@ public abstract class BaseParallaxHolder implements IParallaxHolder {
 
     @Override
     public void onScrollChanged(int scrollX, int scrollY, boolean isTouchEvent) {
-        ViewCompat.setTranslationY(mContentView,Utils.constrains(-scrollY / PARALLAX_RATIO,0,getParallaxTop()));
+        ViewCompat.setTranslationY(mContentView,Utils.minMax(-scrollY / PARALLAX_RATIO, 0, getParallaxTop()));
         if(mParallaxMode == ParallaxMode.PARALLAX_MODE_SCROLL
                 && scrollY >= 0){
             ViewCompat.setTranslationY(mContentView,-scrollY);

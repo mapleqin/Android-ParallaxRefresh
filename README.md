@@ -161,6 +161,7 @@ For more information please see <a href="http://devsoulwolf.github.io/Android-Pa
  <ul>
    	<li><a href='javascript:'>ParallaxScrollView</a></li>
 	<li><a href='javascript:'>ParallaxListView</a></li>
+	<li><a href='javascript:'>ParallaxGridView</a></li>
  </ul>
 
 ## Custom
@@ -248,7 +249,7 @@ For more information please see <a href="http://devsoulwolf.github.io/Android-Pa
   	    <groupId>net.soulwolf.widget</groupId>
 		<url>https://dl.bintray.com/soulwolf/maven</url>
   	    <artifactId>parallaxRefresh</artifactId>
-  	    <version>1.0.0</version>
+  	    <version>1.0.1</version>
 	</dependency>
 ## Gradle
 	allprojects {
@@ -257,7 +258,7 @@ For more information please see <a href="http://devsoulwolf.github.io/Android-Pa
        }
 	}
 	
-	compile 'net.soulwolf.widget:parallaxRefresh:1.0.0'
+	compile 'net.soulwolf.widget:parallaxRefresh:1.0.1'
 
 ## Developed by
  Ching Soulwolf - <a href='javascript:'>Ching.Soulwolf@gmail.com</a>
