@@ -28,10 +28,14 @@ public class MainActivity extends AppCompatActivity{
     }
 
     public void onScrollViewClick(View view){
-        startActivity(new Intent(this,ParallaxScrollViewActivity.class));
+        startActivity(new Intent(this, ParallaxScrollViewActivity.class));
     }
 
     public void onListViewClick(View view){
         startActivity(new Intent(this,ParallaxListViewActivity.class));
+    }
+
+    public void onFragmentClick(View view){
+        startActivity(new Intent(this,SimpleFragmentActivity.class));
     }
 }

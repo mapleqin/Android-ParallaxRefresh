@@ -24,6 +24,10 @@
             android:name="net.soulwolf.widget.parallaxrefresh.sample.ParallaxListViewActivity"
             android:label="@string/title_activity_parallax_list_view" >
         </activity>
+        <activity
+            android:name="net.soulwolf.widget.parallaxrefresh.sample.SimpleFragmentActivity"
+            android:label="@string/title_activity_simple" >
+        </activity>
     </application>
 
 </manifest>
