@@ -5,8 +5,8 @@ For more information please see <a href="https://www.amphiaraus.org/Android-Para
 
 ## Screenshots
 
-![Sample](https://img.alicdn.com/imgextra/i3/1025192026/TB2pBIHeVXXXXb3XXXXXXXXXXXX_!!1025192026.gif)
-![Sample](https://img.alicdn.com/imgextra/i4/1025192026/TB2yYAweVXXXXaIXpXXXXXXXXXX_!!1025192026.gif)
+![Sample](https://github.com/amphiaraus/Android-ParallaxRefresh/raw/master/Screenshots/parallax-listview.gif)
+![Sample](https://github.com/amphiaraus/Android-ParallaxRefresh/raw/master/Screenshots/parallax-scrollview.gif)
 
 
 ## Android-ParallaxRefresh with xml code
